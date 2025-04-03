@@ -2,6 +2,7 @@ import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';  // Import jwt
 import User from '../models/User.js';
 import Employee from '../models/Employee.js';
+// import RegisterEmail from './Email-Generator/RegisterEmail.js';
 // const bcrypt = require('bcrypt');
 const login = async (req, res) => {
     const JWT_KEY = "jwtSecretKeyanujjsengar";   // Move to env file in production
@@ -10,6 +11,15 @@ const login = async (req, res) => {
     //         const hashed = await bcrypt.hash(password, saltRounds);
     //         console.log(`Hashed Password: ${hashed}`);
     // };
+    // const sendEmail = async (email_details) =>{
+    //     const email_info =await RegisterEmail(
+    //         email_details.email,
+    //         "Registration Information",
+    //         email_password.password,
+    //         "<h1>Thankyou for Registration</h1>"
+    //     )
+    //     console.log(email_info);
+    // }
     try {
         console.log("Attempting login...");
 
