@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 
 
 const EmployeeSchema=new mongoose.Schema({
-    Employee_ID:{type:Number,required:true},
+    Employee_ID:{type:String,required:true},
     name:{type:String,required:true},
     email:{type:String,required:true},
+    password:{type:String,required:true},
     DOB:{type:Date,required:true},
     Mobile:{type:String,required:true},
     Department:{type:String,required:true},

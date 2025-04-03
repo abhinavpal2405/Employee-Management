@@ -10,7 +10,7 @@ const Register = () => {
     DOB: '',
     Mobile:'',
     Department:'',
-    role: 'employee' // Default role
+    role: 'Employee' // Default role
   });
 
   // Focus states
@@ -165,8 +165,8 @@ const Register = () => {
               } focus:outline-none`}
               required
             >
-              <option value="employee">Employee</option>
-              <option value="admin">Admin</option>
+              <option value="Employee">Employee</option>
+              <option value="Admin">Admin</option>
             </select>
           </div>
 
