@@ -1,6 +1,7 @@
 import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';  // Import jwt
 import User from '../models/User.js';
+import Employee from '../models/Employee.js';
 // const bcrypt = require('bcrypt');
 const login = async (req, res) => {
     const JWT_KEY = "jwtSecretKeyanujjsengar";   // Move to env file in production
@@ -16,7 +17,7 @@ const login = async (req, res) => {
         // console.log(email);
         // console.log(password);
         // Check if the user exists
-        const user = await User.findOne({ email });
+        const user = await Employee.findOne({ email });
         // console.log(user.email);
         // console.log(user.password)
         if (!user) {
