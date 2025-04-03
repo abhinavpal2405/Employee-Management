@@ -34,7 +34,6 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-blue-300">
       <div className="bg-white p-8 rounded-3xl shadow-2xl w-96 transition-transform transform hover:scale-105 duration-300">
         <h2 className="text-4xl font-extrabold text-center mb-6 text-blue-700 tracking-wide animate-pulse">
           Employee Management System
@@ -96,11 +95,10 @@ const AdminLogin = () => {
             type="submit"
             className="w-full bg-blue-500 text-white py-3 rounded-lg shadow-lg hover:bg-blue-600 hover:scale-105 transition-transform duration-300 ease-in-out"
           >
-            Login 🚀
+          Admin Login 🚀
           </button>
         </form>
       </div>
-    </div>
   );
 };
 

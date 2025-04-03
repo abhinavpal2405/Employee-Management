@@ -7,7 +7,9 @@ const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: '',
+    DOB: '',
+    Mobile:'',
+    Department:'',
     role: 'employee' // Default role
   });
 
@@ -15,7 +17,9 @@ const Register = () => {
   const [focused, setFocused] = useState({
     name: false,
     email: false,
-    password: false,
+    DOB: false,
+    Mobile: false,
+    Department: false,
     role: false
   });
 
@@ -91,23 +95,61 @@ const Register = () => {
             />
           </div>
 
-          {/* Password Field */}
+          {/* DOB */}
           <div className="relative">
-            <label className="block text-gray-700">Password</label>
+            <label className="block text-gray-700">DOB</label>
             <input
-              type="password"
-              name="password"
-              value={formData.password}
+              type="date"
+              name="DOB"
+              value={formData.DOB}
               onChange={handleChange}
-              onFocus={() => handleFocus('password')}
-              onBlur={() => handleBlur('password')}
+              onFocus={() => handleFocus('DOB')}
+              onBlur={() => handleBlur('DOB')}
               className={`w-full px-4 py-2 border rounded-lg transition-all duration-300 ${
-                focused.password ? "border-green-500 ring-2 ring-green-400" : "border-gray-300"
+                focused.DOB ? "border-green-500 ring-2 ring-green-400" : "border-gray-300"
               } focus:outline-none`}
               placeholder="Enter your password"
               required
             />
           </div>
+
+          {/* Mobile */}
+          <div className="relative">
+            <label className="block text-gray-700">Mobile Number</label>
+            <input
+              type="tele"
+              name="Mobile"
+              value={formData.Mobile}
+              onChange={handleChange}
+              onFocus={() => handleFocus('Mobile')}
+              onBlur={() => handleBlur('Mobile')}
+              className={`w-full px-4 py-2 border rounded-lg transition-all duration-300 ${
+                focused.Mobile ? "border-green-500 ring-2 ring-green-400" : "border-gray-300"
+              } focus:outline-none`}
+              placeholder="XXX-XXXX-XXX"
+              required
+            />
+          </div>
+
+
+          {/* Mobile */}
+          <div className="relative">
+            <label className="block text-gray-700">Department</label>
+            <input
+              type="text"
+              name="Department"
+              value={formData.Department}
+              onChange={handleChange}
+              onFocus={() => handleFocus('Department')}
+              onBlur={() => handleBlur('Department')}
+              className={`w-full px-4 py-2 border rounded-lg transition-all duration-300 ${
+                focused.Department ? "border-green-500 ring-2 ring-green-400" : "border-gray-300"
+              } focus:outline-none`}
+              placeholder="Enter Department"
+              required
+            />
+          </div>
+
 
           {/* Role Field */}
           <div className="relative">

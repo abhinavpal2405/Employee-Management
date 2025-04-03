@@ -8,8 +8,13 @@ const register = async (req, res) => {
     //   };
       
     try {
-        const { name, email, password, role } = req.body;
-
+        const { name, email, DOB, Mobile, Department, role } = req.body;
+        console.log(name);
+        console.log(email);
+        console.log(DOB);
+        console.log(Mobile);
+        console.log(Department);
+        console.log(role);
         // Use `await` with `User.findOne` to properly await the result
         const existingUser = await User.findOne({ email });
         if (existingUser) {
@@ -20,7 +25,7 @@ const register = async (req, res) => {
         const newUser = new User({
             name,
             email,
-            password,
+            Mobile,
             role
         });
 
