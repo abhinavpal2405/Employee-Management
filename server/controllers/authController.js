@@ -12,7 +12,7 @@ const login = async (req, res) => {
     try {
         console.log("Attempting login...");
 
-        const { email, password } = req.body;
+        const { email, password, role } = req.body;
         // console.log(email);
         // console.log(password);
         // Check if the user exists
@@ -29,7 +29,7 @@ const login = async (req, res) => {
         // Compare passwords
         // const isMatch = await compare(password, user.password);
         // console.log(isMatch);
-        if (!(hashpass===user.password)) {
+        if (!(hashpass===user.password) || !(role===user.role)) {
             console.log("Incorrect password");
             return res.status(401).json({ success: false, error: "Wrong password" });
         }
