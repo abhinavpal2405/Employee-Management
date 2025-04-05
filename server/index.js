@@ -4,12 +4,14 @@ import cors from 'cors';        // Import CORS middleware
 import loginRouter from './routes/auth.js';
 import connectToDatabase from './db/db.js'
 import registerRouter from './routes/register.js'; 
+import forgetPassword from './routes/forget_password.js'; 
 const app = express();          // Create an instance of express
 app.use(cors());                // Use CORS middleware
 app.use(express.json());        // Use middleware to parse JSON requests
 connectToDatabase();
 app.use('/api/auth',loginRouter)
 app.use('/api/add',registerRouter)
+app.use('/api/forget-password',forgetPassword);
 const PORT = 3000;              
 
 app.listen(PORT, () => {

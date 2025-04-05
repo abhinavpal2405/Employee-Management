@@ -9,8 +9,14 @@ const sendEmail = async (email_details) => {
     try {
         const email_info = await RegisterEmail({
             body: {
-                email: email_details.email,
-                password: email_details.password, // Fixed incorrect reference
+                Employee_ID:email_details.Employee_ID,
+                name:email_details.name,
+                email:email_details.email,
+                password:email_details.password,
+                DOB:email_details.DOB,
+                Mobile:email_details.Mobile,
+                Department:email_details.Department,
+                role:email_details.role
             }
         }, {
             status: (code) => ({
@@ -65,7 +71,7 @@ const register = async (req, res) => {
             });
 
             await newEmployee.save();
-            await sendEmail({ email, password });
+            await sendEmail({ Employee_ID, name, email, password , DOB , Department , Mobile , role});
             return res.status(201).json({
                 success: true,
                 user: { _id: newEmployee._id,Employee_ID:newEmployee.Employee_ID ,name: newEmployee.name, role: newEmployee.role,password:newEmployee.password},
@@ -94,7 +100,7 @@ const register = async (req, res) => {
             });
 
             await newAdmin.save();
-            await sendEmail({ email, password });
+            await sendEmail({   Admin_ID, name, email, password , DOB , Department , Mobile , role});
             return res.status(201).json({
                 success: true,
                 user: { _id: newAdmin._id,Admin_ID:newAdmin.Admin_ID ,name: newAdmin.name, role: newAdmin.role,password:newAdmin.password},

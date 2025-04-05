@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
+ 
 const EmployeeLogin = () => {
   // Form data states
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    role:'employee'
+    role:'Employee'
   });
 
   // Focus states
@@ -24,7 +25,7 @@ const EmployeeLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login", formData);
+      const response = await axios.post("http://localhost:3000/api/auth/employee", formData);
       console.log('Login Successful:', response.data);
       alert("Login Successful!");
     } catch (error) {
@@ -89,6 +90,13 @@ const EmployeeLogin = () => {
               🔒
             </div>
           </div>
+
+          <div>
+            <a href="/employee-forget" class="text-blue-600 hover:underline hover:text-blue-800 transition duration-200">
+              Forgot password?
+            </a>
+          </div>
+
 
           {/* Login Button */}
           <button

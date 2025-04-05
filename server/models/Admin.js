@@ -6,6 +6,7 @@ const AdminSchema=new mongoose.Schema({
     Admin_ID:{type:String,required:true},
     name:{type:String,required:true},
     email:{type:String,required:true},
+    password:{type:String,required:true},
     DOB:{type:Date,required:true},
     Mobile:{type:String,required:true},
     Department:{type:String,required:true},
