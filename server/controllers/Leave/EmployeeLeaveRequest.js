@@ -9,7 +9,6 @@ const EmployeeLeaveRequest = async (req,res) => {
         console.log(FromDate);
         console.log(ToDate);
         console.log(Description);
-
         const LeaveDetails = new EmployeeLeave({
             Employee_ID:Employee_ID,
             FromDate:FromDate,

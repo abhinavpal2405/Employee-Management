@@ -35,6 +35,7 @@ const LeaveRequest = () => {
     try{
       console.log(leaveDetails);
     const response = await axios.post("http://localhost:3000/api/leave-request/employees",leaveDetails);
+    console.log(response);
     console.log("Leave Request Submitted:", leaveDetails);
     alert("Leave Request Sent!");
     }
