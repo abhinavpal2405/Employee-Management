@@ -8,7 +8,7 @@ import EmployeeData from "./InfoRetrival/EmployeeData"
 import AdminData from "./InfoRetrival/AdminData"
 import MarkEmployeesAttendance from "./Admin/AdminPages/Attendance/MarkAttendance"
 import LeaveRequest from "./Employee/EmployeePages/LeaveRequest"
-
+import EmployeeAttendanceChart from "./Employee/EmployeePages/EmployeeAttendance"
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +23,7 @@ function App() {
     <Route path="/get-details/admins" element={<AdminData/>}></Route>
     <Route path="/mark-attendance/employees" element={<MarkEmployeesAttendance/>}></Route>
     <Route path="/leave-request/employees" element={<LeaveRequest/>}></Route>
+    <Route path="/attendance-record/employee" element={<EmployeeAttendanceChart/>}></Route>
     </Routes>
     </BrowserRouter>
     )
