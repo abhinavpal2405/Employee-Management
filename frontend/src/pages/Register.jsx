@@ -41,7 +41,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/add/register", formData);
+      const response = await axios.post("https://employee-management-eyf8.onrender.com/api/add/register", formData);
       console.log('Registration Successful:', response.data);
       alert("Registration Successful!");
       path_login()
