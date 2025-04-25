@@ -29,7 +29,7 @@ const AdminForget =() => {
         e.preventDefault();
         try {
           if(formData.newpassword===formData.confirmpassword){
-          const response = await axios.post("http://localhost:3000/api/forget-password/admin", formData);
+          const response = await axios.post("https://employee-management-eyf8.onrender.com/api/forget-password/admin", formData);
           console.log('Password Changed:', response.data);
           alert("Password Changed!");
           path_login();
