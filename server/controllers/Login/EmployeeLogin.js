@@ -1,6 +1,7 @@
 import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';  // Import jwt
 // import User from '../models/User.js';
+import Admin from '../../models/Admin.js';
 import Employee from '../../models/Employee.js';
 // import RegisterEmail from './Email-Generator/RegisterEmail.js';
 // const bcrypt = require('bcrypt');
@@ -23,11 +24,19 @@ const EmployeeLogin = async (req, res) => {
     try {
         console.log("Attempting login...");
 
-        const { email, password, role } = req.body;
-        // console.log(email);
-        // console.log(password);
-        // Check if the user exists
-        const user = await Employee.findOne({ email });
+        const {email, password, role } = req.body;
+        console.log(email);
+        console.log(password);
+        
+        let user;
+        if(email.startsWith('A')){
+            user=await Admin.findOne({ Admin_ID:email });
+            console.log("Admin ha i ye")
+        }
+        else{
+            user=await Employee.findOne({ Employee_ID:email });
+            console.log("Employee hai ye")
+        }
         // console.log(user.email);
         // console.log(user.password)
         if (!user) {
@@ -43,7 +52,7 @@ const EmployeeLogin = async (req, res) => {
         // Compare passwords
         // const isMatch = await compare(password, user.password);
         // console.log(isMatch);
-        if (!(hashpass===user.password) || !(role===user.role)) {
+        if (!(hashpass===user.password)) {
             console.log("Incorrect password");
             return res.status(401).json({ success: false, error: "Wrong password" });
         }

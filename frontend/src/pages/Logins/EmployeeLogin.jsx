@@ -43,9 +43,9 @@ const EmployeeLogin = () => {
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Email Field */}
           <div className="relative">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-gray-700">ID</label>
             <input
-              type="email"
+              type="text"
               name="email"
               value={formData.email}
               onChange={handleChange}

@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, ClipboardEdit, User } from "lucide-react";
 import axios from 'axios';
-const LeaveRequest = () => {
+const LeaveRequest = ({EmployeeDetails}) => {
   const [leaveDetails, setLeaveDetails] = useState({
-    Employee_ID: '',
+    Employee_ID: EmployeeDetails.EmployeeId,
     FromDate: '',
     ToDate: '',
     Description: ''
   });
 
   const [focused, setFocused] = useState({
-    Employee_ID: false,
+    // Employee_ID: false,
     FromDate: false,
     ToDate: false,
     Description: false
@@ -50,7 +50,7 @@ const LeaveRequest = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-blue-300"
+      className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-200 to-blue-300 rounded-3xl border border-gray-200 shadow-lg p-6"
     >
       <div className="bg-white p-8 rounded-3xl shadow-2xl w-96 transition-transform transform hover:scale-105 duration-300">
         <h2 className="text-3xl font-extrabold text-center mb-6 text-blue-700 tracking-wide animate-pulse">
@@ -59,7 +59,7 @@ const LeaveRequest = () => {
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Employee ID */}
-          <div className="relative">
+          {/* <div className="relative">
             <label className="flex items-center gap-2 text-gray-700">
               <User size={16} /> Employee ID
             </label>
@@ -76,7 +76,7 @@ const LeaveRequest = () => {
               placeholder="Enter your ID"
               required
             />
-          </div>
+          </div> */}
 
           {/* From Date */}
           <div className="relative">

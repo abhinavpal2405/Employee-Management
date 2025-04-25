@@ -8,23 +8,24 @@ const EmployeeAttendance = async (req, res) => {
 
         // Fetch employee joining date if FromDate is not provided
         let StartDate;
-        if (!FromDate) {
-            const employee = await Employee.findOne({ Employee_id: ID });
-            if (!employee) {
-                return res.status(404).json({ success: false, error: "Employee not found" });
-            }
-            StartDate = employee.JoiningAt;
-        } else {
-            StartDate = new Date(FromDate);
+    if (!FromDate || FromDate.trim() === "") {
+        const employee = await Employee.findOne({ Employee_id: ID });
+        if (!employee) {
+            return res.status(404).json({ success: false, error: "Employee not found" });
         }
+        StartDate = new Date(employee.JoiningAt);
+    } else {
+        StartDate = new Date(FromDate);
+    }
 
-        // Set EndDate as current date if ToDate is not provided
-        let EndDate;
-        if (!ToDate) {
-            EndDate = new Date();
-        } else {
-            EndDate = new Date(ToDate);
-        }
+    // Set EndDate as current date if ToDate is not provided or empty
+    let EndDate;
+    if (!ToDate || ToDate.trim() === "") {
+        EndDate = new Date(); // current date
+    } else {
+        EndDate = new Date(ToDate);
+    }
+
 
         // Fetch attendance stats
         const Total = await Attendance.countDocuments({

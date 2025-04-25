@@ -85,6 +85,8 @@ const register = async (req, res) => {
             }
             const Admin_ID='A'+name.charAt(0).toUpperCase()+Mobile.substr(0,2)+DOB.substr(6,4);
             const password='A'+DOB.substr(0,2)+DOB.substr(3,2)+DOB.substr(6,4);
+            console.log(Admin_ID);
+            console.log(password);
             // const result = await Student.aggregate([
             //     { $group: { _id: null, maxMarks: { $max: "$marks" } } }
             //   ]);
