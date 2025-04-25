@@ -12,7 +12,7 @@ const MarkEmployeeAttendance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/get-details/employees");
+        const response = await axios.get("https://employee-management-eyf8.onrender.com/api/get-details/employees");
         setEmployees(response.data);
         setFilteredEmployees(response.data);
       } catch (error) {
@@ -55,7 +55,7 @@ const MarkEmployeeAttendance = () => {
     }
 
     try {
-      await axios.post("http://localhost:3000/api/mark-attendance/employees", {
+      await axios.post("https://employee-management-eyf8.onrender.com/api/mark-attendance/employees", {
         attendance: attendanceData
       });
       alert("Attendance submitted successfully!");
