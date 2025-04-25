@@ -11,7 +11,7 @@ const EmployeeData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/get-details/employees");
+        const response = await axios.get("https://employee-management-eyf8.onrender.com/api/get-details/employees");
         setEmployees(response.data);
         setFilteredEmployees(response.data);
       } catch (error) {
