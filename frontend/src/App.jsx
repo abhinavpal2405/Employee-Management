@@ -14,15 +14,15 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Navigate to="/register"/>}></Route>
-    <Route path="/login" element={<Login/>}></Route>
-    <Route path="/register" element={<Register/>}></Route>
-    <Route path="/admin-forget" element={<AdminForget/>}></Route>
-    <Route path="/employee-forget" element={<EmployeeForget/>}></Route>
-    <Route path="/get-details/employees" element={<EmployeeData/>}></Route>
-    <Route path="/get-details/admins" element={<AdminData/>}></Route>
-    <Route path="/mark-attendance/employees" element={<MarkEmployeesAttendance/>}></Route>
-    <Route path="/dashboard/employee" element={<EmployeeDashboard/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/" element={<Navigate to="/register"/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/login" element={<Login/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/register" element={<Register/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/admin-forget" element={<AdminForget/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/employee-forget" element={<EmployeeForget/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/get-details/employees" element={<EmployeeData/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/get-details/admins" element={<AdminData/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/mark-attendance/employees" element={<MarkEmployeesAttendance/>}></Route>
+    <Route path="https://employee-management-eyf8.onrender.com/dashboard/employee" element={<EmployeeDashboard/>}></Route>
     </Routes>
     </BrowserRouter>
     )
