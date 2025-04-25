@@ -25,7 +25,7 @@ const EmployeeLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/employee", formData);
+      const response = await axios.post("https://employee-management-eyf8.onrender.com/api/auth/employee", formData);
       console.log('Login Successful:', response.data);
       alert("Login Successful!");
     } catch (error) {
