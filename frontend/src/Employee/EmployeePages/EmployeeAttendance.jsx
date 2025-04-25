@@ -31,7 +31,7 @@ const EmployeeAttendanceChart = ({ EmployeeDetails }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/attendance-record/employee",
+        "https://employee-management-eyf8.onrender.com/api/attendance-record/employee",
         {
           ID: EmployeeDetails.EmployeeId,
           FromDate: formData.fromDate,
